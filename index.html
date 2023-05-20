@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--AIzaSyBoHN5kSh_GkDDsHK6TwJ8mrELwfGvOFaQ-->
+    <title>Document</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoHN5kSh_GkDDsHK6TwJ8mrELwfGvOFaQ"></script>
+    <style>
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+    <script>
+        function initMap() {
+          // Coordenadas del centro del mapa
+          var center = { lat: 30, lng: 30 };
+      
+          // Crea un nuevo mapa en el contenedor con opciones de visualización
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: center,
+            zoom: 1
+          });
+      
+          // Crea un marcador en una ubicación específica
+          var marker = new google.maps.Marker({
+            position: { lat: 30, lng: 30 },
+            map: map,
+            title: 'Mi marcador'
+          });
+      
+          // Crea un botón en una ubicación específica
+          var button = document.createElement('button');
+          button.innerText = 'Mi botón';
+          button.style.position = 'absolute';
+          button.style.top = 30;
+          button.style.left = 30;
+          button.addEventListener('click', function() {
+            // Acción al hacer clic en el botón
+          });
+          map.controls[google.maps.ControlPosition.TOP_LEFT].push(button);
+        }
+        google.maps.event.addDomListener(window, 'load', initMap);
+      </script>
+      
+</head>
+<body>
+    <div id="map">
+
+    </div>
+</body>
+</html>
